@@ -105,7 +105,9 @@ class App extends React.Component {
     handleCardLike(card) {
         const isLiked = card.likes.some(i => i === this.state.currentUser._id);
         api.changeLikeCardStatus(card._id, !isLiked).then((newCard) => {
-            this.setState({cards: this.state.cards.map((c) => c._id === card._id ? newCard : c)});
+            this.setState({
+                cards: this.state.cards.map((c) => c._id === card._id ? newCard : c )
+            });
         }).catch((err) => {
             console.log(err);
         });
