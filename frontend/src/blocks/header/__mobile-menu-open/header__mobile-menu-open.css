@@ -1,0 +1,20 @@
+.header__mobile-menu-open {
+  width: 24px;
+  height: 24px;
+  background-image: url("../../../images/menu.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: none;
+  margin: 20px;
+}
+
+.header__mobile-menu-open:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+@media (min-width: 588px) {
+  .header__mobile-menu-open {
+    display: none;
+  }
+}

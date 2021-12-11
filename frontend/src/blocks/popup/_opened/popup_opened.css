@@ -1,0 +1,6 @@
+.popup_opened {
+  height: 100%;
+  opacity: 1;
+  width: 100%;
+  transition: height 0ms 0ms, opacity 350ms 0ms ease-in;
+}

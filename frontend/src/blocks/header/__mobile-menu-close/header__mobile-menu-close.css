@@ -1,0 +1,20 @@
+.header__mobile-menu-close {
+  width: 30px;
+  height: 30px;
+  background-image: url("../../../images/close_button.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: none;
+  margin: 20px;
+}
+
+.header__mobile-menu-close:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+@media (min-width: 588px) {
+  .header__mobile-menu-close {
+    display: none;
+  }
+}

@@ -1,0 +1,15 @@
+.tooltip {
+  width: 430px;
+  height: 330px;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (max-width: 588px) {
+  .tooltip {
+    width: 280px;
+    height: 308px;
+  }
+}

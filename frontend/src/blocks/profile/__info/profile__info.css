@@ -1,0 +1,21 @@
+.profile__info {
+  display: grid;
+  grid-template-columns: min-content repeat(3, minmax(min-content, max-content));
+  grid-template-rows:  min-content repeat(2, minmax(min-content, max-content));
+  grid-gap: 0px;
+  grid-template-areas:
+      "avatar name name"
+      "avatar title title";
+  align-items: center;
+}
+
+@media (max-width: 588px) {
+  .profile__info {
+    grid-template-areas:
+      "avatar avatar"
+      "name name"
+      "title title";
+    grid-template-columns: repeat(2, minmax(min-content, max-content));
+    grid-template-rows:  repeat(3, minmax(min-content, max-content));
+  }
+}

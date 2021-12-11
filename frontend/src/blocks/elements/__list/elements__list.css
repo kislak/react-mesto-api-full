@@ -1,0 +1,20 @@
+.elements__list {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(282px, 1fr));
+  gap: 17px;
+}
+
+@media (max-width: 880px) {
+  .elements__list {
+    max-width: 588px;
+  }
+}
+
+@media (max-width: 588px) {
+  .elements__list {
+    max-width: 282px;
+  }
+}

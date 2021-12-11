@@ -1,0 +1,11 @@
+.tooltip__image {
+  margin-top: 60px;
+  width: 120px;
+  height: 120px;
+}
+@media (max-width: 588px) {
+  .tooltip__notice {
+    margin-top: 50px;
+  }
+}
+

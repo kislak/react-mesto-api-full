@@ -1,0 +1,19 @@
+.profile__avatar {
+  grid-area: avatar;
+  min-width: 128px;
+  min-height: 128px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+@media (max-width: 588px) {
+  .profile__avatar {
+    margin: 0 auto;
+  }
+}
+
+.profile__avatar:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}

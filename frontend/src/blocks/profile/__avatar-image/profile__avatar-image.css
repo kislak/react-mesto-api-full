@@ -1,0 +1,19 @@
+.profile__avatar-image {
+  width: 128px;
+  height: 128px;
+  margin-right: 20px;
+  border-radius: 50%;
+  grid-area: avatar;
+  object-fit: cover;
+}
+
+@media (max-width: 588px) {
+  .profile__avatar-image {
+    margin: 0 auto;
+  }
+}
+
+.profile__avatar:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}

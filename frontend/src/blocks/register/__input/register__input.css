@@ -1,0 +1,23 @@
+.register__input {
+  margin-top: 30px;
+  width: 358px;
+
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 17px;
+  letter-spacing: 0em;
+  text-align: left;
+
+  color: white;
+  background-color: black;
+  border: 0px;
+  border-bottom: 2px #CCCCCC solid;
+}
+
+@media (max-width: 588px) {
+  .register__input {
+    width: 280px;
+  }
+}

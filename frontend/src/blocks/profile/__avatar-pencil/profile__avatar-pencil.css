@@ -1,0 +1,15 @@
+.profile__avatar-pencil {
+  width: 26px;
+  height: 26px;
+  position: relative;
+  left: -80px;
+  top: 50px;
+  background-image: url("../../../images/edit-profile-pencil.svg");
+  background-size: contain;
+  background-color: transparent;
+  visibility: hidden;
+}
+
+.profile__avatar:hover > .profile__avatar-pencil {
+  visibility: visible;
+}
