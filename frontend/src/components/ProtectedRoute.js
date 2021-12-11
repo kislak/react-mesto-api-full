@@ -5,7 +5,6 @@ const SIGN_IN_ROUTE = 'sign-in'
 
 function ProtectedRoute({ children, ...restOfProps }) {
     const isAuthenticated = localStorage.getItem("AuthToken");
-    console.log("this", isAuthenticated);
 
     return (
         <Route

@@ -13,6 +13,7 @@ class AuthApi {
 
     getUserEmail() {
         return fetch(`${this._baseUrl}/users/me`, {
+            credentials: "include",
             headers: {
                 "Content-Type": "application/json",
                 "Authorization" : `Bearer ${localStorage.getItem("AuthToken")}`
@@ -23,6 +24,7 @@ class AuthApi {
     _sendRequest(endpoint, email, password) {
         return fetch(`${this._baseUrl}/${endpoint}`, {
             method: "POST",
+            credentials: 'include',
             headers: {
                 'Content-Type': 'application/json'
             },
@@ -43,7 +45,8 @@ class AuthApi {
 }
 
 const authApi = new AuthApi({
-    baseUrl: "https://auth.nomoreparties.co"
+    baseUrl: "http://localhost:3000"
+    // baseUrl: "https://auth.nomoreparties.co"
 });
 
 export default authApi;

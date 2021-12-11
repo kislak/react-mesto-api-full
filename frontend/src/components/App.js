@@ -51,7 +51,7 @@ class App extends React.Component {
 
         if (localStorage.getItem("AuthToken")) {
             authApi.getUserEmail().then((res) => {
-                this.setState({email: res.data.email})
+                this.setState({email: res.email})
             }).catch((err) => {
                 console.log(err);
             })
@@ -103,7 +103,7 @@ class App extends React.Component {
     }
 
     handleCardLike(card) {
-        const isLiked = card.likes.some(i => i._id === this.state.currentUser._id);
+        const isLiked = card.likes.some(i => i === this.state.currentUser._id);
         api.changeLikeCardStatus(card._id, !isLiked).then((newCard) => {
             this.setState({cards: this.state.cards.map((c) => c._id === card._id ? newCard : c)});
         }).catch((err) => {

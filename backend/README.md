@@ -12,7 +12,7 @@
 
 `npm run start` — запускает сервер   
 `npm run dev` — запускает сервер с hot-reload
-"npm run lint-fix": "npx eslint . --fix"
+`npm run lint-fix` "npx eslint . --fix"
 
 
 `nvm use v14.17.4`
