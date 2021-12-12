@@ -2,7 +2,7 @@ require('dotenv').config();
 
 const {
   PORT = 3000,
-  CORS_ORIGIN = "http://localhost:3000 http://kurs.nomoredomains.rocks https://kurs.nomoredomains.rocks",
+  CORS_ORIGIN = 'http://localhost:3000 http://kurs.nomoredomains.rocks https://kurs.nomoredomains.rocks',
   MONGO_URL = 'mongodb://localhost:27017/mestodb',
 } = process.env;
 
@@ -33,18 +33,17 @@ app.get('/crash-test', () => {
   }, 0);
 });
 
-const whitelist = CORS_ORIGIN.split(" ")
+const whitelist = CORS_ORIGIN.split(' ');
 const corsOptions = {
-  origin: function (origin, callback) {
+  origin(origin, callback) {
     if (whitelist.indexOf(origin) !== -1) {
-      callback(null, true)
+      callback(null, true);
     } else {
-      callback(new Error('Not allowed by CORS'))
+      callback(new Error('Not allowed by CORS'));
     }
   },
-  credentials: true
-}
-
+  credentials: true,
+};
 
 app.use(cors(corsOptions));
 app.options('*', cors(corsOptions));
