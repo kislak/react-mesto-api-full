@@ -1,6 +1,6 @@
 const config = {
-    baseUrl: "http://localhost:4000",
-    baseAuthUrl: "http://localhost:4000"
+    baseUrl: "http://kus.nomoredomains.rocks",
+    baseAuthUrl: "http://kus.nomoredomains.rocks"
 }
 
 export default config
