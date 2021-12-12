@@ -4,11 +4,6 @@ const errorHandler = (err, req, res, next) => {
     message = 'На сервере произошла ошибка',
   } = err;
 
-  if (err.name === 'ValidationError') {
-    statusCode = 404;
-    message = `Переданы некорректные данные. ${err.message}`;
-  }
-
   res.status(statusCode).send({ message });
   return next();
 };
