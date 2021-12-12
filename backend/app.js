@@ -16,8 +16,9 @@ const auth = require('./middlewares/auth');
 const usersRouter = require('./routes/users');
 const cardsRouter = require('./routes/cards');
 const errorHandler = require('./middlewares/error_handler');
-
 const cors = require('cors')
+const { requestLogger, errorLogger } = require('./middlewares/logger');
+
 
 const app = express();
 mongoose.connect(MONGO_URL, {
@@ -33,15 +34,16 @@ var corsOptions = {
 app.use(cors(corsOptions))
 app.options('*', cors(corsOptions))
 
-
 app.use(express.json());
 app.use(cookieParser());
 
+app.use(requestLogger);
 app.use('/', authRouter);
 app.use(auth);
 app.use('/users', usersRouter);
 app.use('/cards', cardsRouter);
 
+app.use(errorLogger);
 app.use(errors());
 app.use(errorHandler);
 
