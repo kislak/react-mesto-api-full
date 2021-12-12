@@ -27,6 +27,13 @@ mongoose.connect(MONGO_URL, {
 
 app.get('/', (req, res) => res.send('Ответ на сигнал из далёкого космоса'));
 
+app.get('/crash-test', () => {
+  setTimeout(() => {
+    throw new Error('Сервер сейчас упадёт');
+  }, 0);
+});
+
+
 var corsOptions = {
   origin: CORS_ORIGIN,
   credentials: true
@@ -42,6 +49,7 @@ app.use('/', authRouter);
 app.use(auth);
 app.use('/users', usersRouter);
 app.use('/cards', cardsRouter);
+
 
 app.use(errorLogger);
 app.use(errors());
