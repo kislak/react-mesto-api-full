@@ -1,27 +1,40 @@
 # Проект Mesto фронтенд + бэкенд
 
 
-## see frontend at
-
+## frontend
 https://kurs.nomoredomains.rocks
 
-## see backend at
+## backend
 https://kus.nomoredomains.rocks
 
+## crash-test
+https://kus.nomoredomains.rocks/crash-test
 
 
-just in case:
 
-## Директории
 
-`/routes` — папка с файлами роутера  
-`/controllers` — папка с файлами контроллеров пользователя и карточки   
-`/models` — папка с файлами описания схем пользователя и карточки  
-  
-Остальные директории вспомогательные, создаются при необходимости разработчиком
+config with:
 
-## Запуск проекта
 
-`npm run start` — запускает сервер   
-`npm run dev` — запускает сервер с hot-reload
-`npm run lint-fix` "npx eslint . --fix"
+
+### notes
+configs: 
+
+```
+sudo vim /etc/nginx/sites-available/default
+sudo nginx -t
+sudo systemctl restart nginx 
+
+vim  ~/react-mesto-api-full/backend/.env
+vim  ~/react-mesto-api-full/frontend/src/config.js
+ 
+pm2 restart app
+```
+
+Обновление сертификата
+
+```
+sudo certbot renew --pre-hook "service nginx stop" --post-hook "service nginx start"
+```
+
+ 
