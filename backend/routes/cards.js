@@ -12,7 +12,7 @@ const {
 
 const idValidator = celebrate({
   params: Joi.object().keys({
-    id: Joi.string().length(24).hex()
+    id: Joi.string().length(24).hex(),
   }),
 });
 

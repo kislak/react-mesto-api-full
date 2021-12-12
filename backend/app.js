@@ -1,9 +1,9 @@
-require('dotenv').config()
+require('dotenv').config();
 
 const {
   PORT = 3000,
   CORS_ORIGIN = 'http://localhost:3000 http://localhost:3001 http://kurs.nomoredomains.rocks https://kurs.nomoredomains.rocks',
-  MONGO_URL = 'mongodb://localhost:27017/mestodb'
+  MONGO_URL = 'mongodb://localhost:27017/mestodb',
 } = process.env;
 
 const express = require('express');
@@ -11,15 +11,14 @@ const mongoose = require('mongoose');
 
 const cookieParser = require('cookie-parser');
 const { errors } = require('celebrate');
+const cors = require('cors');
 const authRouter = require('./routes/auth');
 const auth = require('./middlewares/auth');
 const usersRouter = require('./routes/users');
 const cardsRouter = require('./routes/cards');
 const errorHandler = require('./middlewares/error_handler');
-const cors = require('cors')
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 const { NotFoundError } = require('./errors/not_found');
-
 
 const app = express();
 mongoose.connect(MONGO_URL, {
@@ -34,13 +33,12 @@ app.get('/crash-test', () => {
   }, 0);
 });
 
-
-var corsOptions = {
+const corsOptions = {
   origin: CORS_ORIGIN,
-  credentials: true
-}
-app.use(cors(corsOptions))
-app.options('*', cors(corsOptions))
+  credentials: true,
+};
+app.use(cors(corsOptions));
+app.options('*', cors(corsOptions));
 
 app.use(express.json());
 app.use(cookieParser());

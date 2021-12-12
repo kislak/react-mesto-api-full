@@ -1,12 +1,12 @@
 const validator = require('validator');
 
 const urlValidator = (value, helper) => {
-  if (!validator.isURL(value,  { require_protocol: true })) {
-    return helper.message("Invalid URL")
+  if (!validator.isURL(value, { require_protocol: true })) {
+    return helper.message('Invalid URL');
   }
-  return true
+  return true;
 };
 
 module.exports = {
-  urlValidator
-}
+  urlValidator,
+};
