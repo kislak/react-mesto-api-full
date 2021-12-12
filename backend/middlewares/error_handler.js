@@ -1,5 +1,5 @@
 const errorHandler = (err, req, res, next) => {
-  let {
+  const {
     statusCode = 500,
     message = 'На сервере произошла ошибка',
   } = err;
