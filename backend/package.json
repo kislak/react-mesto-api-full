@@ -2,7 +2,7 @@
   "name": "express-mesto",
   "version": "1.0.0",
   "description": "## Директории",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "start": "node app.js",
     "dev": "nodemon app.js",
@@ -13,7 +13,7 @@
     "type": "git",
     "url": "git+https://github.com/kislak/express-mesto.git"
   },
-  "author": "",
+  "author": "Serge Kislak",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/kislak/express-mesto/issues"

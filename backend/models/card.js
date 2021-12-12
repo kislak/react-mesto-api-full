@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
-
-const URL_REGEXP = /^(http|https):\/\/(www)?[\w\-._~:/?#[\]@!$&'()*+,;=]*#?$/i;
+const validator = require('validator');
 
 const cardSchema = new mongoose.Schema({
   name: {
@@ -13,7 +12,7 @@ const cardSchema = new mongoose.Schema({
     type: String,
     required: true,
     validate: {
-      validator: (value) => URL_REGEXP.test(value),
+      validator: (value) => validator.isURL(value),
       message: (props) => `${props.value} is not a valid link`,
     },
   },

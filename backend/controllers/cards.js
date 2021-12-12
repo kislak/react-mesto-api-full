@@ -20,6 +20,9 @@ const deleteCard = (req, res, next) => {
   const { id } = req.params;
   Card.findOne({ _id: id })
     .then((card) => {
+      if (!card) {
+        throw new NotFoundError('Запрашиваемая карточка не найдена');
+      }
       if (card.owner.toString() !== req.user._id) {
         return next(new ForbiddenError('Пользоватьель не авторизован'));
       }

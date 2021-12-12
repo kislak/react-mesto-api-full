@@ -2,7 +2,7 @@ require('dotenv').config()
 
 const {
   PORT = 3000,
-  CORS_ORIGIN = 'http://localhost:3001',
+  CORS_ORIGIN = 'http://localhost:3000 http://localhost:3001 http://kurs.nomoredomains.rocks https://kurs.nomoredomains.rocks',
   MONGO_URL = 'mongodb://localhost:27017/mestodb'
 } = process.env;
 
@@ -18,6 +18,7 @@ const cardsRouter = require('./routes/cards');
 const errorHandler = require('./middlewares/error_handler');
 const cors = require('cors')
 const { requestLogger, errorLogger } = require('./middlewares/logger');
+const { NotFoundError } = require('./errors/not_found');
 
 
 const app = express();
@@ -50,6 +51,9 @@ app.use(auth);
 app.use('/users', usersRouter);
 app.use('/cards', cardsRouter);
 
+app.use((req, res, next) => {
+  next(new NotFoundError('Маршрут не найден'));
+});
 
 app.use(errorLogger);
 app.use(errors());

@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { celebrate, Joi } = require('celebrate');
+const { urlValidator } = require('./joi_custom_validators');
 
 const {
   getCards,
@@ -11,7 +12,7 @@ const {
 
 const idValidator = celebrate({
   params: Joi.object().keys({
-    id: Joi.string().regex(/^[0-9a-fA-F]{24}$/),
+    id: Joi.string().length(24).hex()
   }),
 });
 
@@ -19,7 +20,7 @@ router.get('/', getCards);
 router.post('/', celebrate({
   body: Joi.object().keys({
     name: Joi.string().required().min(2).max(30),
-    link: Joi.string().required().uri(),
+    link: Joi.string().required().custom(urlValidator),
   }),
 }), createCard);
 

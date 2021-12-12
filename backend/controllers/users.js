@@ -36,7 +36,7 @@ const createUser = (req, res, next) => {
     }))
     .then(() => res.status(STATUS_OK).send({ message: 'Пользователь успешно зарегистрирован!' }))
     .catch((err) => {
-      if (err.name === 'MongoServerError' && err.code === 11000) {
+      if (err.code === 11000) {
         return next(new ConflictError(err.message));
       }
       return next(err);
