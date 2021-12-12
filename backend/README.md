@@ -3,14 +3,14 @@
 
 ## frontend
 https://kurs.nomoredomains.rocks
+62.84.112.195
 
 ## backend
 https://kus.nomoredomains.rocks
+62.84.112.195
 
 ## crash-test
 https://kus.nomoredomains.rocks/crash-test
-
-
 
 
 config with:
