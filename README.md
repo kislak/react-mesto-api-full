@@ -1,20 +1,40 @@
-# react-mesto-api-full
-Репозиторий для приложения проекта `Mesto`, включающий фронтенд и бэкенд части приложения со следующими возможностями: авторизации и регистрации пользователей, операции с карточками и пользователями. Бэкенд расположите в директории `backend/`, а фронтенд - в `frontend/`. 
-  
-Пожалуйста, прикрепите в это описание ссылку на сайт, размещенный на Яндекс.Облаке.
-
-
-## backend
-#### Запуск проекта
-
-`npm run start` — запускает сервер   
-`npm run dev` — запускает сервер с hot-reload
-`npm run lint-fix` "npx eslint . --fix"
-
-
-`nvm use v14.17.4`
+# Проект Mesto фронтенд + бэкенд
 
 
 ## frontend
-#### Запуск проекта
-### `yarn start`
+https://kurs.nomoredomains.rocks
+62.84.112.195
+
+## backend
+https://kus.nomoredomains.rocks
+62.84.112.195
+
+## crash-test
+https://kus.nomoredomains.rocks/crash-test
+
+
+config with:
+
+
+
+### notes
+configs: 
+
+```
+sudo vim /etc/nginx/sites-available/default
+sudo nginx -t
+sudo systemctl restart nginx 
+
+vim  ~/react-mesto-api-full/backend/.env
+vim  ~/react-mesto-api-full/frontend/src/config.js
+ 
+pm2 restart app
+```
+
+Обновление сертификата
+
+```
+sudo certbot renew --pre-hook "service nginx stop" --post-hook "service nginx start"
+```
+
+ 
