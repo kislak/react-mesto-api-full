@@ -1,3 +1,5 @@
+import config from "../config.js"
+
 class AuthApi {
     constructor({baseUrl}) {
         this._baseUrl = baseUrl;
@@ -45,8 +47,7 @@ class AuthApi {
 }
 
 const authApi = new AuthApi({
-    baseUrl: "http://localhost:3000"
-    // baseUrl: "https://auth.nomoreparties.co"
+    baseUrl: config.baseAuthUrl
 });
 
 export default authApi;

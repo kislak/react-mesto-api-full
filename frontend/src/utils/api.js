@@ -1,3 +1,5 @@
+import config from "../config.js"
+
 class Api {
     constructor({baseUrl, headers}) {
         this._baseUrl = baseUrl;
@@ -91,10 +93,8 @@ class Api {
 }
 
 const api = new Api({
-    baseUrl: 'http://localhost:3000',
-    // baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-25',
+    baseUrl: config.baseUrl,
     headers: {
-        // authorization: 'f852889b-4e45-42a6-a8c2-82025ba7c42c',
         'Content-Type': 'application/json'
     }
 });

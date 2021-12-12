@@ -1,7 +1,13 @@
+require('dotenv').config()
+
+const {
+  PORT = 3000,
+  CORS_ORIGIN = 'http://localhost:3001',
+  MONGO_URL = 'mongodb://localhost:27017/mestodb'
+} = process.env;
+
 const express = require('express');
 const mongoose = require('mongoose');
-
-const { PORT = 3000 } = process.env;
 
 const cookieParser = require('cookie-parser');
 const { errors } = require('celebrate');
@@ -14,14 +20,14 @@ const errorHandler = require('./middlewares/error_handler');
 const cors = require('cors')
 
 const app = express();
-mongoose.connect('mongodb://localhost:27017/mestodb', {
+mongoose.connect(MONGO_URL, {
   useNewUrlParser: true,
 });
 
 app.get('/', (req, res) => res.send('Ответ на сигнал из далёкого космоса'));
 
 var corsOptions = {
-  origin: 'http://localhost:3001',
+  origin: CORS_ORIGIN,
   credentials: true
 }
 app.use(cors(corsOptions))

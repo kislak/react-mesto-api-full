@@ -6,9 +6,6 @@ const { UnauthorizedError } = require('../errors/unauthorized');
 const auth = (req, res, next) => {
   const token = req.cookies.jwt;
 
-  console.log('check auth');
-  console.log(req.cookies.jwt);
-
   if (!token) {
     return next(new UnauthorizedError('Необходима авторизация'));
   }
